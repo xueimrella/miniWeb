@@ -23,8 +23,6 @@
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
     
-    
-    
     NSString *urlString = urlText.text;
     if(![urlString hasPrefix:@"http://"]){
         urlString = [[NSString alloc] initWithFormat:@"http://%@", urlString];
