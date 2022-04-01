@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="evt-xL-PIi">
+                                <rect key="frame" x="0.0" y="44" width="415" height="32"/>
+                                <segments>
+                                    <segment title="Facebook"/>
+                                    <segment title="Twitter"/>
+                                    <segment title="Apple"/>
+                                    <segment title="Google"/>
+                                </segments>
+                                <connections>
+                                    <action selector="bookmarkAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="Ea3-zB-A69"/>
+                                </connections>
+                            </segmentedControl>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="qa5-sh-UXK">
+                                <rect key="frame" x="0.0" y="83" width="414" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="URL" keyboardAppearance="light" returnKeyType="go"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="NxA-4h-L5s"/>
+                                </connections>
+                            </textField>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h5U-9c-TWL">
+                                <rect key="frame" x="0.0" y="826" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem systemItem="rewind" id="7lh-Dt-nzf">
+                                        <connections>
+                                            <action selector="goBack" destination="KHR-LT-iSY" id="Dy8-H8-jCz"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="MKq-t3-B1F"/>
+                                    <barButtonItem systemItem="fastForward" id="2JM-zf-b25">
+                                        <connections>
+                                            <action selector="goForward" destination="KHR-LT-iSY" id="1iC-fX-5Ev"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="WoM-il-ova"/>
+                                    <barButtonItem systemItem="stop" id="2Ar-N2-5uH">
+                                        <connections>
+                                            <action selector="stopLoading" destination="KHR-LT-iSY" id="1Xc-Qh-bQf"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="xjv-Sp-V3u"/>
+                                    <barButtonItem systemItem="refresh" id="hEU-EW-5bw">
+                                        <connections>
+                                            <action selector="reload" destination="KHR-LT-iSY" id="TPd-S3-8df"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KHR-LT-iSY">
+                                <rect key="frame" x="0.0" y="125" width="414" height="688"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="vNO-0H-6Fw"/>
+                                </connections>
+                            </webView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Y2H-dD-Zgb">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Y2H-dD-Zgb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7Dg-A3-L6K"/>
+                            <constraint firstItem="Y2H-dD-Zgb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="E6s-sB-cnD"/>
+                            <constraint firstItem="evt-xL-PIi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iOs-rX-lXa"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="activityIndicatorView" destination="Y2H-dD-Zgb" id="mGv-Gc-H87"/>
+                        <outlet property="bookmarkSegmentedControl" destination="evt-xL-PIi" id="5eX-Ni-lm0"/>
+                        <outlet property="mainWebView" destination="KHR-LT-iSY" id="Q42-Zt-rVp"/>
+                        <outlet property="urlText" destination="qa5-sh-UXK" id="Au5-GI-jP9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="73.913043478260875" y="63.616071428571423"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
